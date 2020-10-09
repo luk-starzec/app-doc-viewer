@@ -1,0 +1,29 @@
+{
+  "name": "app-doc-viewer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "gray-matter": "^4.0.2",
+    "next": "^9.5.3",
+    "normalize.css": "^8.0.1",
+    "raw-loader": "^4.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "babel-plugin-inline-react-svg": "^1.1.1",
+    "babel-plugin-styled-components": "^1.11.1"
+  }
+}

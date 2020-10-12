@@ -1,0 +1,5 @@
+[
+  { "label": "test", "url": "/adr/test-01" },
+  { "label": "test numer 2", "url": "/adr/test-02" },
+  { "label": "GIT", "url": "http://localhost:3000" }
+]

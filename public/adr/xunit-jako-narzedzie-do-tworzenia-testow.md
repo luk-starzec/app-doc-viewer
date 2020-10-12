@@ -1,4 +1,4 @@
-##  ADR xUnit jako narzędzie do tworzenia testów 2020-09-15
+##  ADR xUnit jako narzędzie do tworzenia testów [2020-10-09]
 ### Jaki problem?
 
 Trzeba wybrać narzędzie do tworzenia testów

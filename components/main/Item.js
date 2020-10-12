@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import ExternalLink from "./ExternalLink";
 import InternalLink from "./InternalLink";
 
@@ -10,6 +10,16 @@ const StyledItem = styled.li`
 
   a {
     text-decoration: none;
+    transition: color 0.5s;
+
+    .linkText__label {
+      color: ${({ theme }) => theme.sectionLabel_color};
+    }
+
+    .linkText__comment {
+      color: ${({ theme }) => theme.sectionComment_color};
+    }
+
     &:hover {
       animation: fontBlink 0.2s;
 
@@ -20,11 +30,11 @@ const StyledItem = styled.li`
       }
 
       .linkText__label {
-        color: #ffffff;
+        color: ${({ theme }) => theme.sectionLabel_color_hover};
       }
 
       .linkText__comment {
-        color: #bbbbbb;
+        color: ${({ theme }) => theme.sectionComment_color_hover};
       }
     }
   }
@@ -46,4 +56,4 @@ Item.propTypes = {
   comment: PropTypes.string,
 };
 
-export default Item;
+export default withTheme(Item);

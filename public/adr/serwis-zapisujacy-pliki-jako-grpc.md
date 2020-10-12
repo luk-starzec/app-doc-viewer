@@ -1,4 +1,4 @@
-##  ADR Serwis zapisujący pliki ubezpieczeń korzysta z gRPC 2020-09-15
+##  ADR Serwis zapisujący pliki ubezpieczeń korzysta z gRPC [2020-10-09]
 ### Jaki problem?
 
 Serwis wysyłający pliki i ich dane do bazy jest wydzielonym komponentem. Trzeba wybrać technologię komunikacji z innymi elementami systemu.

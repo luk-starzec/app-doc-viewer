@@ -1,12 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import SectionIcon, { ALL_SECTION_TYPES } from "../shared/SectionIcon";
 import { ReactComponent as ToggleIcon } from "../../assets/toggle-ico.svg";
 
 const StyledSummary = styled.summary`
-  background-color: #3c3c3c;
-  color: #eeeeee;
+  background-color: ${({ theme }) => theme.sectionHeader_backgroundColor};
+  color: ${({ theme }) => theme.sectionHeader_color};
   cursor: pointer;
   font-size: 1.5rem;
   font-weight: 500;
@@ -15,6 +15,7 @@ const StyledSummary = styled.summary`
   outline: none;
   border-radius: 0.5rem;
   transition: background-color 0.2s;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 
   &::-webkit-details-marker {
     color: transparent;
@@ -24,7 +25,8 @@ const StyledSummary = styled.summary`
     transition: transform 0.2s;
   }
   &:hover {
-    background-color: #444444;
+    background-color: ${({ theme }) =>
+      theme.sectionHeader_backgroundColor_hover};
 
     svg:not(.toggle) {
       animation: buttonBlinkSmall 0.2s;
@@ -40,6 +42,7 @@ const StyledIcon = styled(SectionIcon)`
 
 const StyledToggle = styled(ToggleIcon)`
   margin: 1rem;
+  stroke: ${({ theme }) => theme.sectionHeader_toggle_color};
 `;
 
 const StyledTitle = styled.div`
@@ -62,4 +65,4 @@ SectionHeader.propTypes = {
   sectionType: PropTypes.oneOf(ALL_SECTION_TYPES),
 };
 
-export default SectionHeader;
+export default withTheme(SectionHeader);

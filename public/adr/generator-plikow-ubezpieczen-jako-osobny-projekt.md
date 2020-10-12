@@ -1,4 +1,4 @@
-##  ADR Generator plków ubezpieczeń jako osobny projekt 2020-09-15
+##  ADR Generator plków ubezpieczeń jako osobny projekt [2020-10-09]
 ### Jaki problem?
 
 Mechanizm generowania treści pliku csv może być elementem konkretnej aplikacji generującej listę ubezpieczeń określonego typu lub re-używalnym komponentem

@@ -19,6 +19,7 @@ const StyledButton = styled.button`
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
 
   transition: transform 0.2s;
   &:hover {

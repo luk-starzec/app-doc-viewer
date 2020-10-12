@@ -10,6 +10,8 @@ const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 3px 3px rgba(0, 0, 0, 0.25));
 `;
 
 const StyledButton = styled.a``;
@@ -38,7 +40,7 @@ const SubMenu = ({ showAdr, showDiagram, showLink, className }) => {
         </StyledButton>
       )}
       {showLink && (
-        <StyledButton href="#link" title="Sznurki">
+        <StyledButton href="#link" title="Linki">
           <StyledIcon sectionType={SECTION_TYPE_LINK} />
         </StyledButton>
       )}

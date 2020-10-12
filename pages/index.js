@@ -1,16 +1,17 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
-import fs from "fs";
 import Section from "../components/main/Section";
 import SubMenu from "../components/main/SubMenu";
 import ContentWrapper from "../components/shared/ContentWrapper";
-import SectionIcon, {
+import {
   SECTION_TYPE_ADR,
   SECTION_TYPE_DIAGRAM,
   SECTION_TYPE_LINK,
 } from "../components/shared/SectionIcon";
-
-const StyledWrapper = styled.div``;
+import GetAdrItems from "../data/AdrData";
+import GetDiagramItems from "../data/DiagramData";
+import GetLinkItems from "../data/LinkData";
+import SearchContext from "../data/SearchContext";
 
 const StyledSection = styled(Section)`
   margin: 20px 0 10px 0;
@@ -26,6 +27,23 @@ const Index = ({ adrItems, diagramItems, linkItems }) => {
   const showAdr = adrItems && adrItems.length > 0;
   const showDiagram = diagramItems && diagramItems.length > 0;
   const showLink = linkItems && linkItems.length > 0;
+  const { searchData, setSearchData } = useContext(SearchContext);
+
+  useEffect(() => {
+    const adr = adrItems.map((item) => ({
+      label: item.label,
+      url: item.url,
+      type: SECTION_TYPE_ADR,
+    }));
+    const diagram = diagramItems.map((item) => ({
+      label: item.label,
+      url: item.url,
+      type: SECTION_TYPE_DIAGRAM,
+    }));
+    const data = [...adr, ...diagram];
+
+    setSearchData(data);
+  }, []);
 
   return (
     <ContentWrapper>
@@ -52,7 +70,7 @@ const Index = ({ adrItems, diagramItems, linkItems }) => {
       )}
       {linkItems && (
         <StyledSection
-          title="Sznurki"
+          title="Linki"
           sectionType={SECTION_TYPE_LINK}
           items={linkItems}
           id="link"
@@ -63,43 +81,11 @@ const Index = ({ adrItems, diagramItems, linkItems }) => {
 };
 
 export const getStaticProps = async () => {
-  const adrFiles = fs.readdirSync("public/adr");
-  const adrNames = adrFiles.map((file) => file.replace(".md", ""));
-  const adrLinks = adrNames.map((name) => ({
-    url: `/adr/${name}`,
-    label: name.replace(/-/g, " "),
-  }));
-
-  const diagramFiles = fs.readdirSync("public/diagram");
-  const xx = fs.ex;
-  const diagramLinks = diagramFiles.map((name) => ({
-    url: `/diagram/${name.replace(/\./g, "-")}`,
-    label: `${name.replace(/-/g, " ").split(".").shift()}`,
-    comment: `[${name.replace(/-/g, " ").split(".").pop()}]`,
-  }));
-
-  //console.log(adrLinks);
-
-  const links = [
-    { url: "aaa1", label: "aa 1" },
-    { url: "http://localhost:3000", label: "GIT:", comment: "http://localhost:3000", externalUrl: true },
-    { url: "aaa3", label: "aa 3" },
-    { url: "aaa4", label: "Jakaś strona", comment: "http://test.pl" },
-    { url: "aaa1", label: "aa 1" },
-    { url: "aaa2", label: "aa 2" },
-    { url: "aaa3", label: "aa 3" },
-    { url: "aaa4", label: "aa 4" },
-    { url: "aaa1", label: "aa 1" },
-    { url: "aaa2", label: "aa 2" },
-    { url: "aaa3", label: "aa 3" },
-    { url: "aaa4", label: "aa 4" },
-  ];
-
   return {
     props: {
-      adrItems: adrLinks,
-      diagramItems: diagramLinks,
-      linkItems: links,
+      adrItems: GetAdrItems(),
+      diagramItems: GetDiagramItems(),
+      linkItems: GetLinkItems(),
     },
   };
 };

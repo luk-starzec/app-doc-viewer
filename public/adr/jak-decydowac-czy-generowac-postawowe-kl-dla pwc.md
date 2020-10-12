@@ -1,4 +1,4 @@
-##  ADR Jak decydować czy trzeba generować listy dla podstawowego ubezpieczenia kosztów leczenia 2020-09-15
+##  ADR Jak decydować czy trzeba generować listy dla podstawowego ubezpieczenia kosztów leczenia [2020-10-09]
 ### Jaki problem?
 
 Aby uniknąć multiplikowania wysyłanych danych o podstawowych ubezpieczeniach kosztów leczenia, trzeba umieć określić jakie ubezpieczenia już zostały wysłane.

@@ -1,5 +1,5 @@
 import React from "react";
-import styled, { withTheme } from "styled-components";
+import styled, { css, withTheme } from "styled-components";
 import { ReactComponent as SunIcon } from "../../assets/sun-ico.svg";
 import { ReactComponent as MoonIcon } from "../../assets/moon-ico.svg";
 
@@ -15,11 +15,19 @@ const StyledButton = styled.button`
   height: 3rem;
   border: none;
   border-radius: 50%;
-  background-color: ${({ theme }) => (theme.isDark ? "#292929" : "#CADDE8")};
   cursor: pointer;
+  outline: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #292929;
+
+  ${({ theme }) =>
+    !theme.isDark &&
+    css`
+      background-color: #cadde8;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.10), 0 3px 6px rgba(0, 0, 0, 0.15);
+    `}
 
   transition: transform 0.2s;
   &:hover {
@@ -35,7 +43,7 @@ const StyledButton = styled.button`
 
 const ThemeToggle = ({ theme, toggleTheme }) => {
   const { isDark } = theme;
-  const title = `włącz tryb ${isDark ? "jasny" : "ciemny"}`;
+  const title = `Włącz tryb ${isDark ? "jasny" : "ciemny"}`;
   return (
     <StyledWrapper>
       <StyledButton onClick={() => toggleTheme()} title={title}>

@@ -3,8 +3,8 @@
 <rect opacity="0.2" x="17.25" y="9.75" width="13.5" height="9" rx="2" fill="white"/>
 <rect opacity="0.2" x="8.25" y="29.25" width="13.5" height="9" rx="2" fill="white"/>
 <rect opacity="0.2" x="26.25" y="29.25" width="13.5" height="9" rx="2" fill="white"/>
-<rect x="17.25" y="9" width="13.5" height="9" rx="2" fill="#F9F9F6"/>
-<rect x="8.25" y="28.5" width="13.5" height="9" rx="2" fill="#F9F9F6"/>
-<rect x="26.25" y="28.5" width="13.5" height="9" rx="2" fill="#F9F9F6"/>
+<rect x="17.25" y="9" width="13.5" height="9" rx="2" fill="#FBFBF9"/>
+<rect x="8.25" y="28.5" width="13.5" height="9" rx="2" fill="#FBFBF9"/>
+<rect x="26.25" y="28.5" width="13.5" height="9" rx="2" fill="#FBFBF9"/>
 <path opacity="0.2" d="M14.625 28.5V23.625H23.625M32.625 28.5V23.625H23.625M23.625 18V23.625" stroke="#4F5D73" stroke-width="2"/>
 </svg>

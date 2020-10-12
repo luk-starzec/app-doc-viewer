@@ -1,4 +1,4 @@
-##  ADR Osobna baza danych dla ubezpieczeń 2020-09-15
+##  ADR Osobna baza danych dla ubezpieczeń [2020-10-09]
 ### Jaki problem?
 
 Trzeba zdecydować w jaki sposób będą przechowywane dane ubezpieczeń.

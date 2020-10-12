@@ -7,13 +7,16 @@ const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html{
+  scroll-behavior: smooth;
+}
 
 body{
-    /* font-family: 'Roboto Mono', monospace; */
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    background-color: ${({ theme }) => theme.body} ;
-    
+    background-color: ${({ theme }) => theme.body};
+    transition: background-color 0.5s;
+
     @keyframes buttonBlinkSmall {
       from {
         transform: scale(1);

@@ -26,18 +26,13 @@ const StyledButton = styled.button`
     !theme.isDark &&
     css`
       background-color: #cadde8;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.10), 0 3px 6px rgba(0, 0, 0, 0.15);
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.15);
     `}
 
   transition: transform 0.2s;
   &:hover {
     transform: scale(1.1);
     animation: buttonBlinkSmall 0.2s;
-  }
-
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
   }
 `;
 

@@ -9,6 +9,8 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   gap: 1rem;
   z-index: 100;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1))
+    drop-shadow(0 3px 3px rgba(0, 0, 0, 0.25));
 `;
 
 const StyledButton = styled.button`

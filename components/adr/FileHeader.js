@@ -16,8 +16,8 @@ const StyledLabel = styled.div`
 
 const StyledFileName = styled.div`
   flex-grow: 1;
-  height: 2rem;
-  padding: 0 1rem;
+  min-height: 2rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   border-radius: 0.5rem;
@@ -30,7 +30,7 @@ const StyledIcon = styled(SectionIcon)`
   height: 2rem;
   width: 2rem;
   margin: 0 1rem;
-  align-self: flex-end;
+  flex-shrink: 0;
 `;
 
 const FileHeader = ({ fileName, sectionType, className }) => {

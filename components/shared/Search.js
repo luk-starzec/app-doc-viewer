@@ -44,6 +44,7 @@ const StyledIcon = styled(SearchIcon)`
 
 const StyledInput = styled.input`
   border: none;
+  outline: none;
   background-color: transparent;
   color: #000000;
   font-weight: 300;

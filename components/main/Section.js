@@ -20,12 +20,12 @@ const StyledWrapper = styled.details`
     `}
 
   summary .toggle {
-    transform: rotate(90deg);
+    transform: rotate(0deg);
   }
 
   &[open] summary {
     .toggle {
-      transform: rotate(0deg);
+      transform: rotate(180deg);
     }
 
     ~ * {

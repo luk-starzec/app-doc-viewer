@@ -10,7 +10,7 @@ const StyledItem = styled.li`
 
   a {
     text-decoration: none;
-    transition: color 0.5s;
+    transition: color 0.5s, background-color 0.2s;
 
     .linkText__label {
       color: ${({ theme }) => theme.sectionLabel_color};
@@ -21,14 +21,6 @@ const StyledItem = styled.li`
     }
 
     &:hover {
-      animation: fontBlink 0.2s;
-
-      @keyframes fontBlink {
-        50% {
-          font-size: 1.02rem;
-        }
-      }
-
       .linkText__label {
         color: ${({ theme }) => theme.sectionLabel_color_hover};
       }

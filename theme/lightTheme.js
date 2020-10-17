@@ -1,7 +1,7 @@
 const lightTheme = {
   isDark: false,
 
-  body: "#F3F8FB",
+  body: "#F8F9F9",
 
   sectionHeader_color: "#ffffff",
   sectionHeader_backgroundColor: "#5491b5",
@@ -15,7 +15,8 @@ const lightTheme = {
   sectionComment_color: "#888888",
   sectionComment_color_hover: "#444444",
 
-  adrFileHeaderLabel_color: "#4F5D73",
+  adrFileHeaderWrapper_backgroundColor: "#cadde8",
+  adrFileHeaderLabel_color: "#3E495B",
   adrFileHeader_color: "#2A313C",
   adrFileHeader_backgroundColor: "#ffffff",
 
@@ -23,6 +24,8 @@ const lightTheme = {
   search_backgroundColor: "#ECF4F9",
   searchTooltip_backgroundColor: "#F7FBFD",
   searchTooltipItem_backgroundColor_hover: "#cadde8",
+
+  drawMenuButton_backgroundColor: "#f5f5f5",
 };
 
 export default lightTheme;

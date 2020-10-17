@@ -7,7 +7,7 @@ import { SECTION_TYPE_ADR } from "../../components/shared/SectionIcon";
 import FileContent from "../../components/adr/FileContent";
 
 const StyledFileHeader = styled(FileHeader)`
-  margin-top: 1.2rem;
+  margin-top: 0.8rem;
   margin-bottom: 0.8rem;
   max-width: 1000px;
 `;

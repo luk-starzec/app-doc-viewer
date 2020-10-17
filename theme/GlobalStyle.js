@@ -28,6 +28,7 @@ body{
         transform: scale(1.1);
       }
     }
+    
     @keyframes buttonBlinkBig {
       from {
         transform: scale(1);
@@ -39,7 +40,6 @@ body{
         transform: scale(1.2);
       }
     }
-}
-`;
+}`;
 
 export default GlobalStyle;

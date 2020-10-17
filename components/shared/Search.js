@@ -51,6 +51,7 @@ const StyledInput = styled.input`
   flex-grow: 1;
   padding: 0 10px;
   min-width: 140px;
+  max-width: 300px;
   width: calc((100vw - 1000px - 145px) / 2);
 `;
 

@@ -5,7 +5,7 @@ import { ReactComponent as MoonIcon } from "../../assets/moon-ico.svg";
 
 const StyledWrapper = styled.div`
   position: fixed;
-  top: 1rem;
+  top: 1.5rem;
   right: 1rem;
   z-index: 200;
 `;
@@ -22,7 +22,7 @@ const StyledButton = styled.button`
   align-items: center;
   background-color: #292929;
 
-  ${({ theme }) =>
+ ${({ theme }) =>
     !theme.isDark &&
     css`
       background-color: #cadde8;

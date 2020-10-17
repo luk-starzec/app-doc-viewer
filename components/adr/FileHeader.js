@@ -6,6 +6,11 @@ import SectionIcon, { ALL_SECTION_TYPES } from "../shared/SectionIcon";
 const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
+  background-color: ${({ theme }) =>
+    theme.adrFileHeaderWrapper_backgroundColor};
+  padding: 1.2rem;
+  padding-right: 0;
+  border-radius: 0.5rem;
 `;
 
 const StyledLabel = styled.div`

@@ -15,6 +15,7 @@ const darkTheme = {
   sectionComment_color: "#999999",
   sectionComment_color_hover: "#bbbbbb",
 
+  adrFileHeaderWrapper_backgroundColor: "#333333",
   adrFileHeaderLabel_color: "#ffffff",
   adrFileHeader_color: "#e5e5e5",
   adrFileHeader_backgroundColor: "#3c3c3c",
@@ -24,6 +25,7 @@ const darkTheme = {
   searchTooltip_backgroundColor: "#eeeeee",
   searchTooltipItem_backgroundColor_hover: "#C3CAD5",
 
+  drawMenuButton_backgroundColor:"#3c3c3c",
 };
 
 export default darkTheme;

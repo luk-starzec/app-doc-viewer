@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { withTheme } from "styled-components";
 import { ReactComponent as ZoomInIcon } from "../../assets/zoom-in-ico.svg";
 import { ReactComponent as ZoomOutIcon } from "../../assets/zoom-out-ico.svg";
 import { ReactComponent as NormalIcon } from "../../assets/normal-size-ico.svg";
@@ -9,8 +9,7 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   gap: 1rem;
   z-index: 100;
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1))
-    drop-shadow(0 3px 3px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
 `;
 
 const StyledButton = styled.button`
@@ -28,10 +27,18 @@ const StyledButton = styled.button`
     transform: scale(1.1);
     animation: buttonBlinkSmall 0.2s;
   }
+
+  svg {
+    fill: ${({ theme }) => theme.sizeMenuButton_backgroundColor};
+  }
 `;
 
 const StyledNormalButton = styled(StyledButton)`
   margin-top: 1rem;
+
+  svg {
+    fill: ${({ theme }) => theme.sizeMenuButton_NormalSize_backgroundColor};
+  }
 `;
 
 const SizeMenu = ({ zoomIn, zoomOut, zoomNormal, className }) => {
@@ -53,4 +60,4 @@ const SizeMenu = ({ zoomIn, zoomOut, zoomNormal, className }) => {
   );
 };
 
-export default SizeMenu;
+export default withTheme(SizeMenu);

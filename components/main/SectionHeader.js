@@ -15,7 +15,6 @@ const StyledSummary = styled.summary`
   outline: none;
   border-radius: 0.5rem;
   transition: background-color 0.2s;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
 
   &::-webkit-details-marker {
     color: transparent;

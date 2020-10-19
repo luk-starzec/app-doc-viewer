@@ -8,15 +8,7 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: flex-end;
   gap: 0.75rem;
-
-  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1))
-    drop-shadow(0 3px 3px rgba(0, 0, 0, 0.15));
-
-  ${({ theme }) =>
-    theme.isDark &&
-    css`
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    `};
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.1));
 `;
 
 const StyledButton = styled.button`

@@ -13,13 +13,12 @@ const StyledFileContent = styled(ReactMarkdown)`
   -webkit-transition: -webkit-filter 300ms linear;
 
   background-color: ${({ theme }) => (theme.isDark ? "#1e1e1e" : "#000000")};
+  border: solid 1px ${({ theme }) => theme.adrContent_borderColor};
   color: #e0e0e0;
   ${({ theme }) =>
     !theme.isDark &&
     css`
-      filter: invert(1) hue-rotate(0deg)
-        drop-shadow(0 3px 6px rgba(0, 0, 0, 0.16))
-        drop-shadow(0 3px 6px rgba(0, 0, 0, 0.23));
+      filter: invert(1) hue-rotate(0deg);
     `}
 
   h2 {

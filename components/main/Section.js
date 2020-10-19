@@ -13,10 +13,7 @@ const StyledWrapper = styled.details`
   ${({ theme }) =>
     !theme.isDark &&
     css`
-      border-left-color: rgba(0, 0, 0, 0.15);
-      border-right-color: rgba(0, 0, 0, 0.15);
-      border-bottom-color: rgba(0, 0, 0, 0.15);
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.15);
+      border-color: ${({ theme }) => theme.sectionHeader_backgroundColor};
     `}
 
   summary .toggle {
@@ -24,6 +21,8 @@ const StyledWrapper = styled.details`
   }
 
   &[open] summary {
+    border-radius: 0.5rem 0.5rem 0 0;
+
     .toggle {
       transform: rotate(180deg);
     }

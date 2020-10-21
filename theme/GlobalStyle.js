@@ -17,7 +17,7 @@ body{
     background-color: ${({ theme }) => theme.body};
     transition: background-color 0.5s;
 
-    @keyframes buttonBlinkSmall {
+    @keyframes buttonBlink {
       from {
         transform: scale(1);
       }
@@ -26,18 +26,6 @@ body{
       }
       to {
         transform: scale(1.1);
-      }
-    }
-    
-    @keyframes buttonBlinkBig {
-      from {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.4);
-      }
-      to {
-        transform: scale(1.2);
       }
     }
 }`;

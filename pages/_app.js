@@ -7,11 +7,9 @@ import { ThemeProvider } from "styled-components";
 import darkTheme from "../theme/darkTheme";
 import lightTheme from "../theme/lightTheme";
 import { useEffect, useState } from "react";
-import SearchContext from "../data/SearchContext";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState(darkTheme);
-  const [searchData, setSearchData] = useState([]);
 
   const getTheme = (isDark) => {
     return isDark ? darkTheme : lightTheme;
@@ -34,10 +32,8 @@ function MyApp({ Component, pageProps }) {
       <ThemeToggle toggleTheme={() => toggleTheme()} />
       <HomeButton />
 
-      <SearchContext.Provider value={{ searchData, setSearchData }}>
-        <Search />
-        <Component {...pageProps} />
-      </SearchContext.Provider>
+      <Search />
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }

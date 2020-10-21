@@ -22,7 +22,7 @@ const StyledIcon = styled(SectionIcon)`
   transition: transform 0.2s;
   &:hover {
     transform: scale(1.1);
-    animation: buttonBlinkSmall 0.2s;
+    animation: buttonBlink 0.2s;
   }
 `;
 

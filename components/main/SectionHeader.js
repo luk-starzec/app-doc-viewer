@@ -28,7 +28,7 @@ const StyledSummary = styled.summary`
       theme.sectionHeader_backgroundColor_hover};
 
     svg:not(.toggle) {
-      animation: buttonBlinkSmall 0.2s;
+      animation: buttonBlink 0.2s;
     }
   }
 `;

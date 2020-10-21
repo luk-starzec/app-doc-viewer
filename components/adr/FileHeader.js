@@ -52,4 +52,5 @@ FileHeader.propTypes = {
   fileName: PropTypes.string.isRequired,
   sectionType: PropTypes.oneOf(ALL_SECTION_TYPES),
 };
+
 export default withTheme(FileHeader);

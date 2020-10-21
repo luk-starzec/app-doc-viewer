@@ -1,19 +1,8 @@
 import Link from "next/link";
-import React, {
-  useCallback,
-  useContext,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled, { withTheme } from "styled-components";
 import { ReactComponent as SearchIcon } from "../../assets/search-ico.svg";
-import SectionIcon, {
-  SECTION_TYPE_ADR,
-  SECTION_TYPE_DIAGRAM,
-  SECTION_TYPE_LINK,
-} from "./SectionIcon";
-import SearchContext from "../../data/SearchContext";
+import SectionIcon from "./SectionIcon";
 
 const StyledWrapper = styled.div`
   height: 2rem;
@@ -38,7 +27,19 @@ const StyledIcon = styled(SearchIcon)`
 
   &:hover {
     transform: scale(1.2);
-    animation: buttonBlinkBig 0.2s;
+    animation: iconBlink 0.2s;
+
+    @keyframes iconBlink {
+      from {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.4);
+      }
+      to {
+        transform: scale(1.2);
+      }
+    }
   }
 `;
 
@@ -94,10 +95,11 @@ const StyledItemIcon = styled(SectionIcon)`
 const Search = ({ className }) => {
   const [inputVisible, setInputVisible] = useState(false);
   const [tooltipVisible, setTooltipVisible] = useState(false);
-  const [results, setResults] = useState([]);
-  const { searchData } = useContext(SearchContext);
   const [searchText, setSearchText] = useState("");
+  const [results, setResults] = useState([]);
   const inputRef = useRef(null);
+
+  const searchEndpoint = (query) => `/api/search?q=${query}`;
 
   useEffect(() => {
     window.addEventListener("click", onClick);
@@ -121,18 +123,14 @@ const Search = ({ className }) => {
     setSearchText("");
   }, []);
 
-  const onChange = useCallback(
-    (event) => {
-      const text = event.target.value;
-      setSearchText(text);
-      setResults(
-        text.length > 0
-          ? searchData.filter((item) => item.label.includes(text))
-          : []
-      );
-    },
-    [searchData]
-  );
+  const onChange = useCallback((event) => {
+    const text = event.target.value;
+    setSearchText(text);
+
+    fetch(searchEndpoint(text))
+      .then((res) => res.json())
+      .then((res) => setResults(res.results));
+  }, []);
 
   const onClick = useCallback((event) => {
     if (inputRef.current && !inputRef.current.contains(event.target))

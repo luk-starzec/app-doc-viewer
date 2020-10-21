@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import Section from "../components/main/Section";
 import SubMenu from "../components/main/SubMenu";
@@ -11,7 +11,6 @@ import {
 import GetAdrItems from "../data/AdrData";
 import GetDiagramItems from "../data/DiagramData";
 import GetLinkItems from "../data/LinkData";
-import SearchContext from "../data/SearchContext";
 
 const StyledSection = styled(Section)`
   margin: 20px 0 10px 0;
@@ -27,23 +26,6 @@ const Index = ({ adrItems, diagramItems, linkItems }) => {
   const showAdr = adrItems && adrItems.length > 0;
   const showDiagram = diagramItems && diagramItems.length > 0;
   const showLink = linkItems && linkItems.length > 0;
-  const { searchData, setSearchData } = useContext(SearchContext);
-
-  useEffect(() => {
-    const adr = adrItems.map((item) => ({
-      label: item.label,
-      url: item.url,
-      type: SECTION_TYPE_ADR,
-    }));
-    const diagram = diagramItems.map((item) => ({
-      label: item.label,
-      url: item.url,
-      type: SECTION_TYPE_DIAGRAM,
-    }));
-    const data = [...adr, ...diagram];
-
-    setSearchData(data);
-  }, []);
 
   return (
     <ContentWrapper>

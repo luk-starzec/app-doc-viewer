@@ -14,7 +14,7 @@ const StyledIcon = styled(MainIcon)`
   transition: transform 0.2s;
   &:hover {
     transform: scale(1.1);
-    animation: buttonBlinkSmall 0.2s;
+    animation: buttonBlink 0.2s;
   }
   filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.1))
     drop-shadow(0 3px 5px rgba(0, 0, 0, 0.20));

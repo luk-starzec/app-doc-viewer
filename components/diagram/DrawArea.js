@@ -4,7 +4,7 @@ import Drawing from "./Drawing";
 
 const StyledWrapper = styled.div`
   fill: none;
-  cursor: crosshair;
+  cursor: none;
   transform: scale(${({ zoom }) => zoom});
 
   svg {
@@ -13,9 +13,25 @@ const StyledWrapper = styled.div`
   }
 `;
 
+const StyledCursor = styled.div.attrs(({ position, size }) => ({
+  style: {
+    top: `${position.y - size / 2}px`,
+    left: `${position.x - size / 2}px`,
+  },
+}))`
+  position: absolute;
+  width: ${({ size }) => `${size}px`};
+  height: ${({ size }) => `${size}px`};
+  border-radius: 50%;
+  background-color: ${({ color }) => color};
+  visibility: ${({ isVisible }) => (isVisible ? "visible" : "hidden")};
+`;
+
 const DrawArea = ({ lines, setLines, color, zoom, className }) => {
   const drawAreaRef = useRef(null);
   const [isDrawing, setIsDrawing] = useState(false);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  const [showCursor, setShowCursor] = useState(false);
 
   const handleMouseDown = (mouseEvent) => {
     if (mouseEvent.button != 0) return;
@@ -27,9 +43,12 @@ const DrawArea = ({ lines, setLines, color, zoom, className }) => {
   };
 
   const handleMouseMove = (event) => {
-    if (!isDrawing) return;
-
     const point = relativeCoordinatesForEvent(event);
+
+    setCursorPosition(point);
+    setShowCursor(true);
+
+    if (!isDrawing) return;
 
     setLines((prev) => {
       const lastLine = prev[prev.length - 1];
@@ -44,6 +63,7 @@ const DrawArea = ({ lines, setLines, color, zoom, className }) => {
 
   const handleMouseLeave = () => {
     setIsDrawing(false);
+    setShowCursor(false);
   };
 
   const relativeCoordinatesForEvent = (mouseEvent) => {
@@ -65,6 +85,12 @@ const DrawArea = ({ lines, setLines, color, zoom, className }) => {
       onMouseLeave={handleMouseLeave}
     >
       <Drawing lines={lines} />
+      <StyledCursor
+        isVisible={showCursor}
+        position={cursorPosition}
+        color={color}
+        size={6}
+      />
     </StyledWrapper>
   );
 };

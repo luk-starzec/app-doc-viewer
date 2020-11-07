@@ -6,6 +6,7 @@ import DrawMenu from "../../components/diagram/DrawMenu";
 import SizeMenu from "../../components/diagram/SizeMenu";
 import ContentWrapper from "../../components/shared/ContentWrapper";
 import { SECTION_TYPE_DIAGRAM } from "../../components/shared/SectionIcon";
+import GetDiagramItems from "../../data/DiagramData";
 
 const StyledFileHeader = styled(FileHeader)`
   margin-top: 0.8rem;
@@ -42,13 +43,13 @@ const StyledImage = styled.img`
 
 const StyledSizeMenu = styled(SizeMenu)`
   position: fixed;
-  right: 1rem;
+  right: clamp(0.5rem, 2vw, 1rem);
   bottom: 1.5rem;
 `;
 
 const StyledDrawMenu = styled(DrawMenu)`
   position: fixed;
-  right: 1rem;
+  right: clamp(0.5rem, 2vw, 1rem);
   top: 8rem;
   z-index: 100;
 `;
@@ -106,8 +107,15 @@ const ImageTemplate = ({ fileName, filePath }) => {
   );
 };
 
-ImageTemplate.getInitialProps = async (context) => {
-  const { imageFile } = context.query;
+export async function getStaticPaths() {
+  const items = GetDiagramItems();
+  const paths = items.map(({ url }) => url);
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(context) {
+  const { imageFile } = context.params;
 
   const i = imageFile.lastIndexOf("-");
   const name = imageFile.substr(0, i);
@@ -116,7 +124,7 @@ ImageTemplate.getInitialProps = async (context) => {
   const fileName = `${name}.${ext}`;
   const filePath = `/diagram/${fileName}`;
 
-  return { fileName, filePath };
-};
+  return { props: { fileName, filePath } };
+}
 
 export default ImageTemplate;

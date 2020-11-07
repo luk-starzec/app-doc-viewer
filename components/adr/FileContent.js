@@ -5,12 +5,13 @@ import PropTypes from "prop-types";
 
 const StyledFileContent = styled(ReactMarkdown)`
   margin-bottom: 1rem;
-  padding: 0.8rem 2rem;
+  padding: clamp(0px, 1%, 0.8rem) clamp(10px, 5%, 2rem);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   line-height: 1.5rem;
   border-radius: 0.5rem;
   -webkit-transition: -webkit-filter 300ms linear;
+  transition: -webkit-filter 300ms linear;
 
   background-color: ${({ theme }) => (theme.isDark ? "#1e1e1e" : "#000000")};
   border: solid 1px ${({ theme }) => theme.adrContent_borderColor};

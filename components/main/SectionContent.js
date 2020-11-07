@@ -5,7 +5,7 @@ import Item from "./Item";
 import { ALL_SECTION_TYPES } from "../shared/SectionIcon";
 
 const StyledList = styled.ul`
-  margin: 1.5rem 4rem;
+  margin: 1.5rem clamp(10px, 5%, 4rem);
   padding: 0;
 `;
 

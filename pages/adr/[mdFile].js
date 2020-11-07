@@ -5,11 +5,12 @@ import FileHeader from "../../components/adr/FileHeader";
 import ContentWrapper from "../../components/shared/ContentWrapper";
 import { SECTION_TYPE_ADR } from "../../components/shared/SectionIcon";
 import FileContent from "../../components/adr/FileContent";
+import GetAdrItems from "../../data/AdrData";
+
 
 const StyledFileHeader = styled(FileHeader)`
   margin-top: 0.8rem;
   margin-bottom: 0.8rem;
-  max-width: 1000px;
 `;
 
 const MdTemplate = ({ fileName, content }) => {
@@ -21,13 +22,20 @@ const MdTemplate = ({ fileName, content }) => {
   );
 };
 
-MdTemplate.getInitialProps = async (context) => {
-  const { mdFile: fileName } = context.query;
+export async function getStaticPaths() {
+  const items = GetAdrItems();
+  const paths = items.map(({ url }) => url);
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps(context) {
+  const { mdFile: fileName } = context.params;
 
   const content = await import(`../../public/adr/${fileName}.md`);
   const data = matter(content.default);
 
-  return { fileName, ...data };
-};
+  return { props: { fileName, content: data.content } };
+}
 
 export default MdTemplate;

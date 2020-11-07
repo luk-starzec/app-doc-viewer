@@ -18,7 +18,7 @@ export default (req, res) => {
   }));
   const items = [...adr, ...diagram];
 
-  const text = req.query.q;
+  const text = req.query.text;
   const results = text
     ? items.filter(({ label }) =>
         label.toLowerCase().includes(text.toLowerCase())

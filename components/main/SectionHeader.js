@@ -21,14 +21,15 @@ const StyledSummary = styled.summary`
   }
 
   svg {
-    transition: transform 0.2s;
+    transition: transform 0.1s ease;
   }
   &:hover {
     background-color: ${({ theme }) =>
       theme.sectionHeader_backgroundColor_hover};
 
     svg:not(.toggle) {
-      animation: buttonBlink 0.2s;
+      transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.76, 4);
+      transform: scale(1.1);
     }
   }
 `;
@@ -37,6 +38,10 @@ const StyledIcon = styled(SectionIcon)`
   width: 2rem;
   height: 2rem;
   margin: 1rem;
+
+  @media (max-width: 25rem) {
+    display: none;
+  }
 `;
 
 const StyledToggle = styled(ToggleIcon)`
@@ -47,6 +52,11 @@ const StyledToggle = styled(ToggleIcon)`
 const StyledTitle = styled.div`
   flex-grow: 1;
   text-align: center;
+
+  @media (max-width: 25rem) {
+    text-align: left;
+    padding-left: 1rem;
+  }
 `;
 
 const SectionHeader = ({ title, sectionType, className }) => {

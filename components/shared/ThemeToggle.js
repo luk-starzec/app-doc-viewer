@@ -6,13 +6,14 @@ import { ReactComponent as MoonIcon } from "../../assets/moon-ico.svg";
 const StyledWrapper = styled.div`
   position: fixed;
   top: 1.5rem;
-  right: 1rem;
+  right: clamp(0.5rem, 2vw, 1rem);
   z-index: 200;
 `;
 
 const StyledButton = styled.button`
-  width: 3rem;
-  height: 3rem;
+  width: clamp(2rem, 10vw, 3rem);
+  height: clamp(2rem, 10vw, 3rem);
+
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -28,10 +29,10 @@ const StyledButton = styled.button`
       background-color: #cadde8;
     `}
 
-  transition: transform 0.2s;
+  transition: transform 0.1s ease;
   &:hover {
+    transition: transform 0.2s cubic-bezier(0.18, 0.89, 1, 5.0);
     transform: scale(1.1);
-    animation: buttonBlink 0.2s;
   }
 `;
 

@@ -17,12 +17,13 @@ const StyledWrapper = styled.div`
 const StyledButton = styled.a``;
 
 const StyledIcon = styled(SectionIcon)`
-  height: 3rem;
-  width: 3rem;
-  transition: transform 0.2s;
+  height: clamp(2rem, 10vw, 3rem);
+  width: clamp(2rem, 10vw, 3rem);
+  
+  transition: transform 0.1s ease;
   &:hover {
+    transition: transform 0.2s cubic-bezier(0.18, 0.89, 0.76, 4);
     transform: scale(1.1);
-    animation: buttonBlink 0.2s;
   }
 `;
 

@@ -1,5 +1,5 @@
 import "normalize.css";
-import Search from "../components/shared/Search";
+import Search from "../components/shared/search/Search";
 import HomeButton from "../components/shared/HomeButton";
 import ThemeToggle from "../components/shared/ThemeToggle";
 import GlobalStyle from "../theme/GlobalStyle";

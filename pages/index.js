@@ -18,7 +18,7 @@ const StyledSection = styled(Section)`
 
 const StyledSubMenu = styled(SubMenu)`
   position: fixed;
-  right: 1rem;
+  right: clamp(0.5rem, 2vw, 1rem);
   bottom: 1.5rem;
 `;
 

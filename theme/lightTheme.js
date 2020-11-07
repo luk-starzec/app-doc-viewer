@@ -1,7 +1,7 @@
 const lightTheme = {
   isDark: false,
 
-  body: "#F8F9F9",
+  body: "#F4F7F9",
 
   sectionHeader_color: "#ffffff",
   sectionHeader_backgroundColor: "#5491b5",

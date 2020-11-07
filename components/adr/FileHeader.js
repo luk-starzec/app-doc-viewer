@@ -11,6 +11,13 @@ const StyledWrapper = styled.div`
   padding: 1.2rem;
   padding-right: 0;
   border-radius: 0.5rem;
+
+  @media (max-width: 30rem) {
+    flex-direction: column;
+  }
+  @media (max-width: 35rem) {
+    padding: 0;
+  }
 `;
 
 const StyledLabel = styled.div`
@@ -36,6 +43,10 @@ const StyledIcon = styled(SectionIcon)`
   width: 2rem;
   margin: 0 1rem;
   flex-shrink: 0;
+
+  @media (max-width: 35rem) {
+    display: none;
+  }
 `;
 
 const FileHeader = ({ fileName, sectionType, className }) => {

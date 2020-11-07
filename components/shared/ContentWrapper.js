@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledWrapper = styled.div`
-  margin: 0 5rem 0 6rem;
+  margin: 0 clamp(0px, 15%, 5rem) 0 clamp(0px, 15%, 6rem);
 `;
 
 const StyledContainer = styled.div`

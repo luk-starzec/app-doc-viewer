@@ -89,7 +89,7 @@ const DrawArea = ({ lines, setLines, color, zoom, className }) => {
         isVisible={showCursor}
         position={cursorPosition}
         color={color}
-        size={6}
+        size={isDrawing ? 6 : 14}
       />
     </StyledWrapper>
   );

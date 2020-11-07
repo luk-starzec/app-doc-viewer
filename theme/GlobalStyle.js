@@ -16,18 +16,6 @@ body{
     font-weight: 400;
     background-color: ${({ theme }) => theme.body};
     transition: background-color 0.5s;
-
-    @keyframes buttonBlink {
-      from {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.2);
-      }
-      to {
-        transform: scale(1.1);
-      }
-    }
 }`;
 
 export default GlobalStyle;

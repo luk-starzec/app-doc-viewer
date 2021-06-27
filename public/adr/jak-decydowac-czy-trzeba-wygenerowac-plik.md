@@ -1,4 +1,4 @@
-##  ADR Osobna baza danych dla serwisu generującego pliki [2020-10-09]
+##  ADR Jak decydować czy trzeba wygenerować nową wersję pliku [2020-10-09]
 ### Jaki problem?
 
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit.

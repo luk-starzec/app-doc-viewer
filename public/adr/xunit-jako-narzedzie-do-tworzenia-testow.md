@@ -1,16 +1,16 @@
 ##  ADR xUnit jako narzędzie do tworzenia testów [2020-10-09]
 ### Jaki problem?
 
-Trzeba wybrać narzędzie do tworzenia testów
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 ### Wybór
 
-xUnit. Popularny, łatwy w użyciu i dobrze współpracujący z platformą .NET.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
 
 ### Alternatywy 
 
-NUnit, MSTests
+Aenean commodo ligula eget dolor.
 
 ### Skutki 
 
-Każdy nowy projekt powinien mieć stworzone testy co najmniej dla kluczowych funkcjonalności (co najmniej unit testy, w razie potrzeby również integracyjne)
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.

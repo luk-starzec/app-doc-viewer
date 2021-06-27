@@ -1,16 +1,15 @@
-##  ADR Serwis zapisujący pliki ubezpieczeń korzysta z gRPC [2020-10-09]
+##  ADR Serwis zapisujący pliki korzysta z gRPC [2020-10-09]
 ### Jaki problem?
 
-Serwis wysyłający pliki i ich dane do bazy jest wydzielonym komponentem. Trzeba wybrać technologię komunikacji z innymi elementami systemu.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
 
 ### Wybór
 
-gRPC. Jednoznacznie definiowane kontrakty ułatwiają integrację i porządkują format przesyłanych danych. Spodziewamy się wymiany dużych paczek danych, z czym ta technologia powinna sobie dość dobrze radzić. Łatwo używać w połączeniu z .NET
-
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. 
 ### Alternatywy 
 
-REST
+Aenean commodo ligula eget dolor.
 
 ### Skutki 
 
-Aplikacje klienckie muszą umieć komunikować się przez gRPC. Konieczność synchronizowania zmian kontraktów (pliki .proto) między serwisem a klientami
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.

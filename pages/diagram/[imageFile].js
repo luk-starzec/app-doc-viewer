@@ -39,6 +39,7 @@ const StyledImage = styled.img`
   transform-origin: top;
   transform: scale(${({ zoom }) => zoom});
   transition: transform 0.3s;
+  width: 100%;
 `;
 
 const StyledSizeMenu = styled(SizeMenu)`

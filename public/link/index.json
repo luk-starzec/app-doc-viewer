@@ -1,7 +1,6 @@
 [
-  { "label": "GIT", "url": "https://git.r.pl/rainbow2/joby/wysylaczubezpieczenia/-/tree/ubezpieczenia2/Ubezpieczenia" },
-  { "label": "dev API Produkty", "url": "http://localhost:6001" },
-  { "label": "dev API Produkty WC", "url": "http://localhost:6002" },
-  { "label": "dev API Piloci", "url": "http://localhost:6003" },
-  { "label": "dev API Zamówienia", "url": "http://localhost:6004" }
+  { "label": "GIT", "url": "https://github.com/luk-starzec/" },
+  { "label": "dev API Products", "url": "http://localhost:6001" },
+  { "label": "dev API Categories", "url": "http://localhost:6002" },
+  { "label": "dev API Orders", "url": "http://localhost:6003" }
 ]

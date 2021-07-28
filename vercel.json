@@ -1,8 +1,0 @@
-{
-    "functions": {
-      "pages/api/search.js": {
-        "includeFiles": "public/**"
-      }
-    }
-  }
-  

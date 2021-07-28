@@ -27,7 +27,10 @@ const SearchInput = React.forwardRef((props, ref) => {
 
     fetch(searchEndpoint(text))
       .then((res) => res.json())
-      .then((res) => setResultItems(res.results));
+      .then((res) => setResultItems(res.results))
+      .catch((err) =>
+        setResultItems([{ label: "przepraszamy, opcja wyszukiwania jest niedostępna", url: "" }])
+      );
   }, []);
 
   const onKeyDown = (event) => {

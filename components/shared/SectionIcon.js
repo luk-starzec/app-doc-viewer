@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { ReactComponent as AdrIcon } from "../../assets/adr-ico.svg";
 import { ReactComponent as DiagramIcon } from "../../assets/diagram-ico.svg";
 import { ReactComponent as LinkIcon } from "../../assets/link-ico.svg";
+import { ReactComponent as NoIcon } from "../../assets/no-ico.svg";
 
 export const SECTION_TYPE_ADR = "ADR";
 export const SECTION_TYPE_DIAGRAM = "DIAGRAM";
@@ -25,7 +26,7 @@ const SectionIcon = ({ sectionType, className }) => {
       return <LinkIcon className={className} />;
 
     default:
-      return <></>;
+      return <NoIcon className={className}/>;
   }
 };
 
